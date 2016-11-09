@@ -1,0 +1,6 @@
+framework module Pods_splittable_ttTests {
+  umbrella header "Pods-splittable_ttTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
