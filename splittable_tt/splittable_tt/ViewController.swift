@@ -41,6 +41,12 @@ class TableViewController: UITableViewController{
             return self.items.count;
         }
     
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            if indexPath.row > 0 {
+             performSegue(withIdentifier: "showServiceDetails", sender: indexPath.row)
+            }
+        }
+    
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             let profession = self.items[indexPath.row]
