@@ -24,11 +24,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func addData() {
         print("add data called")
         RestApiManager.sharedInstance.getSheetsuApi { (json: JSON) in
-            //print(json)
             if let results = json.array {
                 for entry in results {
                     self.items.append(ProfessionObject(json: entry))
                 }
+                self.items.sort{$0.sortOrder < $1.sortOrder}
                 DispatchQueue.main.async(execute: {
                     self.tableView.reloadData()
                 })
