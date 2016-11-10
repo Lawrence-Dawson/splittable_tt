@@ -55,7 +55,8 @@ class ViewController: UITableViewController{
         
         if let url = NSURL(string: profession.pictureURL) {
             if let data = NSData(contentsOf: url as URL) {
-                cell?.imageView?.image = UIImage(data: data as Data)
+                
+            cell?.imageView?.image = UIImage(data: data as Data)
             }
         }
         cell!.textLabel?.text = profession.name
