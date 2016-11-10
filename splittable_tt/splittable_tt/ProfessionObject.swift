@@ -11,12 +11,14 @@ import Foundation
 import SwiftyJSON
 
 class ProfessionObject {
-        var profession: String!
+        var name: String!
         var pictureURL: String!
 
     
     required init(json: JSON) {
-        profession = json["name"].stringValue
+        name = json["name"].stringValue
+        print(name)
         pictureURL = json["image_url"]["medium"].stringValue
+        print(pictureURL)
     }
 }

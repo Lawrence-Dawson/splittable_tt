@@ -22,15 +22,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let btn = UIButton(frame: CGRect(x: 0, y: 25, width: self.view.frame.width, height: 50))
         btn.backgroundColor = UIColor.cyan
-        btn.setTitle("Add new Dummy", for: UIControlState.normal)
-        btn.addTarget(self, action: "addDummyData", for: UIControlEvents.touchUpInside)
+        btn.setTitle("Retrieve Data", for: UIControlState.normal)
+        btn.addTarget(self, action: #selector(ViewController.addData), for: UIControlEvents.touchUpInside)
         self.view.addSubview(btn)
     }
-    func addDummyData() {
+    func addData() {
+        print("add data called")
         RestApiManager.sharedInstance.getSheetsuApi { (json: JSON) in
-            if let results = json["results"].array {
+            //print(json)
+            if let results = json.array {
                 for entry in results {
+                    print(results)
                     self.items.append(ProfessionObject(json: entry))
+                    print(self.items)
                 }
                 DispatchQueue.main.async(execute: {
                     self.tableView.reloadData()
@@ -42,7 +46,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count;
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CELL")
+    
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "CELL")
+        }
+        let profession = self.items[indexPath.row]
 
-
+        if let url = NSURL(string: profession.pictureURL) {
+            if let data = NSData(contentsOf: url as URL) {
+                cell?.imageView?.image = UIImage(data: data as Data)
+            }
+        }
+        cell!.textLabel?.text = profession.name
+        return cell!
+    }
 }
-
