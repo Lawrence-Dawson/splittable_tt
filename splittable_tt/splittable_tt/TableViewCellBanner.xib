@@ -19,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="398" height="210"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DET-9N-yI9">
-                        <rect key="frame" x="0.0" y="0.0" width="398" height="210"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DET-9N-yI9">
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="216"/>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -30,7 +30,7 @@
                 </constraints>
             </tableViewCellContentView>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="DET-9N-yI9" secondAttribute="bottom" constant="1" id="WcW-Yc-MCu"/>
+                <constraint firstAttribute="bottom" secondItem="DET-9N-yI9" secondAttribute="bottom" constant="-5" id="WcW-Yc-MCu"/>
             </constraints>
             <connections>
                 <outlet property="mainImageView" destination="DET-9N-yI9" id="Ek1-H7-kgb"/>

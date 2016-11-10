@@ -44,30 +44,34 @@ class TableViewController: UITableViewController{
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             let profession = self.items[indexPath.row]
-
-            let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
             
-                if let url = NSURL(string: profession.pictureURL) {
-                    if let data = NSData(contentsOf: url as URL) {
-        
-                         cell.mainImageView.image = UIImage(data: data as Data)
-                    }
-                }
             if  profession.name == "Banner" {
-                 cell.mainImageLabel.isHidden = true
-                 return cell
+                let cell = Bundle.main.loadNibNamed("TableViewCellBanner", owner: self, options: nil)?.first as! TableViewCellBanner
+                
+                let url = NSURL(string: profession.pictureURL)
+                let data = NSData(contentsOf: url as! URL)
+                
+                cell.mainImageView.image = UIImage(data: data as! Data)
+                
+                return cell
+                
             } else {
+                let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
+               
+                let url = NSURL(string: profession.pictureURL)
+                let data = NSData(contentsOf: url as! URL)
+                
+                cell.mainImageView.image = UIImage(data: data as! Data)
                 cell.mainImageLabel.text = profession.name
+                
                 return cell
             }
+            
+            
         }
     
         override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            if  self.items[indexPath.row].name == "Banner" {
                 return 250
-            } else {
-                return 250
-            }
         }
     
         override func didReceiveMemoryWarning() {
