@@ -13,16 +13,16 @@ typealias RequestResponse = (JSON, NSError?) -> Void
 class RestApiManager: NSObject {
     static let sharedInstance = RestApiManager()
     
-    let baseURL = "https://sheetsu.com/apis/v1.0/aaf79d4763af"
+    let sheetsuURL = "https://sheetsu.com/apis/v1.0/aaf79d4763af"
     
-    func getSheetsuApi(onCompletion: @escaping (JSON) -> Void) {
-        let route = baseURL
-        makeHTTPGetRequest(path: route, onCompletion: { json, err in
-            onCompletion(json as JSON)
+    func getSheetsuApi(completion: (JSON) -> Void) {
+        let route = sheetsuURL
+        makeHTTPGetRequest(path: route, completion: { json, err in
+            completion(json as JSON)
         })
     }
     
-    private func makeHTTPGetRequest(path: String, onCompletion: @escaping RequestResponse) {
+    private func makeHTTPGetRequest(path: String, completion: RequestResponse) {
         let request = NSMutableURLRequest(url: NSURL(string: path)! as URL)
         
         let session = URLSession.shared
@@ -30,9 +30,9 @@ class RestApiManager: NSObject {
         let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
             if let jsonData = data {
                 let json:JSON = JSON(data: jsonData)
-                onCompletion(json, error as NSError?)
+                completion(json, error as NSError?)
             } else {
-                onCompletion(nil, error as NSError?)
+                completion(nil, error as NSError?)
             }
         })
         task.resume()
