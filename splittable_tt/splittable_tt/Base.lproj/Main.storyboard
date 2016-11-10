@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="897" y="-158"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="FM8-sX-Beu">
             <objects>
-                <viewController id="5vw-zV-Mmx" sceneMemberID="viewController">
+                <viewController id="5vw-zV-Mmx" customClass="WebViewController" customModule="splittable_tt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tta-h7-8If"/>
                         <viewControllerLayoutGuide type="bottom" id="Dut-u3-dXm"/>
@@ -52,12 +52,49 @@
                     <view key="view" contentMode="scaleToFill" id="dwW-n4-uwC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-zb-uZe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="620"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yln-tj-hDE">
+                                <rect key="frame" x="0.0" y="620" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="IwX-dH-Wwz">
+                                        <connections>
+                                            <action selector="goBack" destination="zq0-zb-uZe" id="6vq-Ys-BM6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="0mQ-FV-k1u">
+                                        <connections>
+                                            <action selector="goForward" destination="zq0-zb-uZe" id="fqW-w9-wHx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cMK-KV-87h"/>
+                                    <barButtonItem systemItem="refresh" id="qeh-Lp-4yH">
+                                        <connections>
+                                            <action selector="reload" destination="zq0-zb-uZe" id="kb7-Uk-1bZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="stop" id="mCK-3N-IGV">
+                                        <connections>
+                                            <action selector="stopLoading" destination="zq0-zb-uZe" id="pcs-9Y-P7o"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="zq0-zb-uZe" id="k2j-Qm-xbR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gir-eQ-Nwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1635" y="-156"/>
+            <point key="canvasLocation" x="1634.4000000000001" y="-156.07196401799101"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="glW-m0-fCS">

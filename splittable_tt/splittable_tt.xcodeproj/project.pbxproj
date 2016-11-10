@@ -23,6 +23,7 @@
 		89F338CD1DD4CC3B000FB44F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89F338CB1DD4CC3B000FB44F /* TableViewCell.xib */; };
 		89F338D01DD50169000FB44F /* TableViewCellBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F338CE1DD50169000FB44F /* TableViewCellBanner.swift */; };
 		89F338D11DD50169000FB44F /* TableViewCellBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89F338CF1DD50169000FB44F /* TableViewCellBanner.xib */; };
+		89F338D51DD53929000FB44F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F338D41DD53929000FB44F /* WebViewController.swift */; };
 		F7EF480016A4AD120EAAFCC2 /* Pods_splittable_ttUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C019A705D7E85DBFDCF16685 /* Pods_splittable_ttUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		89F338CB1DD4CC3B000FB44F /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		89F338CE1DD50169000FB44F /* TableViewCellBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellBanner.swift; sourceTree = "<group>"; };
 		89F338CF1DD50169000FB44F /* TableViewCellBanner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellBanner.xib; sourceTree = "<group>"; };
+		89F338D41DD53929000FB44F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8E1527D422E048C2AA936CE0 /* Pods_splittable_tt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_splittable_tt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97B1B673B3C3DF285C68EA40 /* Pods_splittable_ttTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_splittable_ttTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99892BAAD42D16F4241EF58B /* Pods-splittable_ttUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-splittable_ttUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-splittable_ttUITests/Pods-splittable_ttUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				897591031DD3DA2800C942C3 /* RestApiManager.swift */,
 				89F338C61DD48066000FB44F /* ProfessionObject.swift */,
 				89F338C81DD4CB9D000FB44F /* code.swift */,
+				89F338D41DD53929000FB44F /* WebViewController.swift */,
 			);
 			path = splittable_tt;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				89F338CC1DD4CC3B000FB44F /* TableViewCell.swift in Sources */,
 				897591041DD3DA2800C942C3 /* RestApiManager.swift in Sources */,
 				89F338C71DD48066000FB44F /* ProfessionObject.swift in Sources */,
+				89F338D51DD53929000FB44F /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

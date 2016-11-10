@@ -9,10 +9,6 @@
 import UIKit
 import SwiftyJSON
 
-//let cell : Int!
-//let text : String!
-//let image : UIImage!
-
 class TableViewController: UITableViewController{
  
     var items = [ProfessionObject]()
@@ -23,7 +19,6 @@ class TableViewController: UITableViewController{
         }
     
     func addData() {
-            print("add data called")
             RestApiManager.sharedInstance.getSheetsuApi { (json: JSON) in
                 if let results = json.array {
                     for entry in results {

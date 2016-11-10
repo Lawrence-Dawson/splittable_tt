@@ -16,9 +16,7 @@ class RestApiManager: NSObject {
     let sheetsuURL = "https://sheetsu.com/apis/v1.0/aaf79d4763af"
     
     func getSheetsuApi(completion: @escaping (JSON) -> Void) {
-        print("get sheetsu called")
         let route = sheetsuURL
-        print(route)
         makeHTTPGetRequest(path: route, completion: { json, err in
             completion(json as JSON)
         })
