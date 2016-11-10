@@ -19,12 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.view.addSubview(self.tableView)
-        
-        let btn = UIButton(frame: CGRect(x: 0, y: 25, width: self.view.frame.width, height: 50))
-        btn.backgroundColor = UIColor.cyan
-        btn.setTitle("Retrieve Data", for: UIControlState.normal)
-        btn.addTarget(self, action: #selector(ViewController.addData), for: UIControlEvents.touchUpInside)
-        self.view.addSubview(btn)
+        addData()
     }
     func addData() {
         print("add data called")
@@ -32,7 +27,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //print(json)
             if let results = json.array {
                 for entry in results {
-                   // print(results)
                     self.items.append(ProfessionObject(json: entry))
                 }
                 DispatchQueue.main.async(execute: {
@@ -53,15 +47,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "CELL")
         }
         let profession = self.items[indexPath.row]
-        print(profession.pictureURL)
+        
+        let sortOrder = Int(profession.sortOrder)
 
         if let url = NSURL(string: profession.pictureURL) {
-            print(url)
             if let data = NSData(contentsOf: url as URL) {
                 cell?.imageView?.image = UIImage(data: data as Data)
             }
         }
         cell!.textLabel?.text = profession.name
+        print(sortOrder)
         return cell!
     }
 }
