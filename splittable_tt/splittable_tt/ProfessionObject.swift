@@ -10,7 +10,7 @@ import Foundation
 
 import SwiftyJSON
 
-class professionObject {
+class ProfessionObject {
         var profession: String!
         var pictureURL: String!
 

@@ -15,14 +15,14 @@ class RestApiManager: NSObject {
     
     let sheetsuURL = "https://sheetsu.com/apis/v1.0/aaf79d4763af"
     
-    func getSheetsuApi(completion: (JSON) -> Void) {
+    func getSheetsuApi(completion: @escaping (JSON) -> Void) {
         let route = sheetsuURL
         makeHTTPGetRequest(path: route, completion: { json, err in
             completion(json as JSON)
         })
     }
     
-    private func makeHTTPGetRequest(path: String, completion: RequestResponse) {
+    private func makeHTTPGetRequest(path: String, completion: @escaping RequestResponse) {
         let request = NSMutableURLRequest(url: NSURL(string: path)! as URL)
         
         let session = URLSession.shared
