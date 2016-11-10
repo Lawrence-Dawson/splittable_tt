@@ -13,7 +13,10 @@ import SwiftyJSON
 class professionObject {
         var profession: String!
         var pictureURL: String!
+
     
-    
+    required init(json: JSON) {
+        profession = json["name"].stringValue
+        pictureURL = json["image_url"]["medium"].stringValue
     }
 }
