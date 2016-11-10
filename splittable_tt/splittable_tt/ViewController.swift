@@ -22,15 +22,7 @@ class TableViewController: UITableViewController{
             addData()
         }
     
-//            override func viewWillAppear(_ animated: Bool) {
-//                let frame:CGRect = CGRect(x: 0, y: 100, width: self.view.frame.width, height: self.view.frame.height-100)
-//                self.tableView = UITableView(frame: frame)
-//                self.tableView.dataSource = self
-//                self.tableView.delegate = self
-//                self.view.addSubview(self.tableView)
-//                addData()
-//            }
-        func addData() {
+    func addData() {
             print("add data called")
             RestApiManager.sharedInstance.getSheetsuApi { (json: JSON) in
                 if let results = json.array {
@@ -50,27 +42,32 @@ class TableViewController: UITableViewController{
         }
     
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            //var cell = tableView.dequeueReusableCell(withIdentifier: "CELL")
-    
-//            if cell == nil {
-//                cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "CELL")
-//            }
+        
+            let profession = self.items[indexPath.row]
+
             let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
             
-            let profession = self.items[indexPath.row]
-    
                 if let url = NSURL(string: profession.pictureURL) {
                     if let data = NSData(contentsOf: url as URL) {
         
                          cell.mainImageView.image = UIImage(data: data as Data)
                     }
                 }
-            cell.mainImageLabel.text = profession.name
-            return cell
+            if  profession.name == "Banner" {
+                 cell.mainImageLabel.isHidden = true
+                 return cell
+            } else {
+                cell.mainImageLabel.text = profession.name
+                return cell
+            }
         }
     
         override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 250
+            if  self.items[indexPath.row].name == "Banner" {
+                return 250
+            } else {
+                return 250
+            }
         }
     
         override func didReceiveMemoryWarning() {
