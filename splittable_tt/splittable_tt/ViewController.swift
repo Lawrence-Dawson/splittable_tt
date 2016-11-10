@@ -71,7 +71,11 @@ class TableViewController: UITableViewController{
         }
     
         override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            if  self.items[indexPath.row].name == "Banner" {
+                return 200
+            } else {
                 return 250
+            }
         }
     
         override func didReceiveMemoryWarning() {
