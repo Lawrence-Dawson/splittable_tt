@@ -9,18 +9,23 @@
 import UIKit
 import SwiftyJSON
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var tableView: UITableView!
+class ViewController: UITableViewController{
+   
     var items = [ProfessionObject]()
     
-    override func viewWillAppear(_ animated: Bool) {
-        let frame:CGRect = CGRect(x: 0, y: 100, width: self.view.frame.width, height: self.view.frame.height-100)
-        self.tableView = UITableView(frame: frame)
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        self.view.addSubview(self.tableView)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         addData()
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        let frame:CGRect = CGRect(x: 0, y: 100, width: self.view.frame.width, height: self.view.frame.height-100)
+//        self.tableView = UITableView(frame: frame)
+//        self.tableView.dataSource = self
+//        self.tableView.delegate = self
+//        self.view.addSubview(self.tableView)
+//        addData()
+//    }
     func addData() {
         print("add data called")
         RestApiManager.sharedInstance.getSheetsuApi { (json: JSON) in
@@ -36,11 +41,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count;
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "CELL")
     
         if cell == nil {
@@ -50,10 +55,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if let url = NSURL(string: profession.pictureURL) {
             if let data = NSData(contentsOf: url as URL) {
-                cell?.imageView?.image = UIImage(data: data as Data)
+                
+            cell?.imageView?.image = UIImage(data: data as Data)
             }
         }
         cell!.textLabel?.text = profession.name
         return cell!
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }
