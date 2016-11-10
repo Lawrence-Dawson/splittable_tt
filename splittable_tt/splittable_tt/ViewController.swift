@@ -32,9 +32,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //print(json)
             if let results = json.array {
                 for entry in results {
-                    print(results)
+                   // print(results)
                     self.items.append(ProfessionObject(json: entry))
-                    print(self.items)
                 }
                 DispatchQueue.main.async(execute: {
                     self.tableView.reloadData()
@@ -54,8 +53,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "CELL")
         }
         let profession = self.items[indexPath.row]
+        print(profession.pictureURL)
 
         if let url = NSURL(string: profession.pictureURL) {
+            print(url)
             if let data = NSData(contentsOf: url as URL) {
                 cell?.imageView?.image = UIImage(data: data as Data)
             }

@@ -17,8 +17,6 @@ class ProfessionObject {
     
     required init(json: JSON) {
         name = json["name"].stringValue
-        print(name)
-        pictureURL = json["image_url"]["medium"].stringValue
-        print(pictureURL)
+        pictureURL = json["image_url"].stringValue
     }
 }
