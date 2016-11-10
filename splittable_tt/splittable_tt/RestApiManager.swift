@@ -15,21 +15,27 @@ class RestApiManager: NSObject {
     
     let baseURL = "https://sheetsu.com/apis/v1.0/aaf79d4763af"
     
-    func getRandomUser(onCompletion: @escaping (JSON) -> Void) {
-        makeHTTPGetRequest(path: baseURL, onCompletion: { json, err -> Void in
-            onCompletion(json)
+    func getSheetsuApi(onCompletion: @escaping (JSON) -> Void) {
+        let route = baseURL
+        makeHTTPGetRequest(path: route, onCompletion: { json, err in
+            onCompletion(json as JSON)
         })
     }
     
-    func makeHTTPGetRequest(path: String, onCompletion: @escaping RequestResponse) {
-        let request = NSMutableURLRequest(url: NSURL(string: path) as! URL)
+    private func makeHTTPGetRequest(path: String, onCompletion: @escaping RequestResponse) {
+        let request = NSMutableURLRequest(url: NSURL(string: path)! as URL)
         
         let session = URLSession.shared
         
-        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-            let json:JSON = JSON(data)
-            onCompletion(json, error as NSError?)
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
+            if let jsonData = data {
+                let json:JSON = JSON(data: jsonData)
+                onCompletion(json, error as NSError?)
+            } else {
+                onCompletion(nil, error as NSError?)
+            }
         })
         task.resume()
     }
+    
 }
