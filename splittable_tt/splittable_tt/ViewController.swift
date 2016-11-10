@@ -48,15 +48,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         let profession = self.items[indexPath.row]
         
-        let sortOrder = Int(profession.sortOrder)
-
         if let url = NSURL(string: profession.pictureURL) {
             if let data = NSData(contentsOf: url as URL) {
                 cell?.imageView?.image = UIImage(data: data as Data)
             }
         }
         cell!.textLabel?.text = profession.name
-        print(sortOrder)
         return cell!
     }
 }
