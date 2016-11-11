@@ -39,20 +39,23 @@ class TableViewController: UITableViewController{
     
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             if indexPath.row > 0 {
-            rowNow = indexPath.row
-
-             performSegue(withIdentifier: "showServiceDetails", sender: indexPath.row)
+                rowNow = indexPath.row
+                
+                let currentViewController = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+                currentViewController.dataPassed = items[rowNow].url
+                navigationController?.pushViewController(currentViewController, animated: true)
+                
+               // performSegue(withIdentifier: "showServiceDetails", sender: indexPath.row)
             }
         }
     
    
   
-//        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//       override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if (segue.identifier == "showServiceDetails") {
 //            print("called")
 //            var svc = segue.destination as! WebViewController;
-//            var url =
-//            svc.dataPassed = url
+//            var url = svc.dataPassed
 //        }
 //    }
     

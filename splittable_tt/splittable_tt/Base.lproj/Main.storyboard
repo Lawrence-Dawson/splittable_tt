@@ -44,7 +44,7 @@
         <!--Web View Controller-->
         <scene sceneID="FM8-sX-Beu">
             <objects>
-                <viewController id="5vw-zV-Mmx" customClass="WebViewController" customModule="splittable_tt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" id="5vw-zV-Mmx" customClass="WebViewController" customModule="splittable_tt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tta-h7-8If"/>
                         <viewControllerLayoutGuide type="bottom" id="Dut-u3-dXm"/>

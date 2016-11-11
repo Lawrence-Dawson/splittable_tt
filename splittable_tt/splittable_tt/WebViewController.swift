@@ -12,14 +12,14 @@ class WebViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
     
-    var dataPassed:String!
+    var dataPassed = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var passedUrl = dataPassed
+        let passedUrl = dataPassed
         print(passedUrl)
       
-       // loadWebPage(urlString: passedUrl!)
+       loadWebPage(urlString: dataPassed)
         
     }
     func loadWebPage(urlString: String){
