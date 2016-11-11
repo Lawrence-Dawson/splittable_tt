@@ -17,6 +17,10 @@ To run this app please do the following:
 What I achieved?
 ----------------
 
+[Home View Snapshot](https://github.com/lawrencedawson/splittable_tt/blob/master/images/home.png "Home View")
+
+[Web View Snapshot](https://github.com/lawrencedawson/splittable_tt/blob/master/images/webView.png "Web View")
+
 Successes:
 - I Successfully achieved all the basic task requirements.
 
