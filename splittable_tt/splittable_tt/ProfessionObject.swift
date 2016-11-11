@@ -14,12 +14,13 @@ class ProfessionObject {
         var name: String!
         var pictureURL: String!
         var sortOrder: String!
+        var url: String!
 
     
     required init(json: JSON) {
         name = json["name"].stringValue
         pictureURL = json["image_url"].stringValue
         sortOrder = json["sort_order"].stringValue
-
+        url = json["url"].stringValue
     }
 }

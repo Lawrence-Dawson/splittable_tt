@@ -11,14 +11,21 @@ import UIKit
 class WebViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
+    
+    var dataPassed:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let url = NSURL(string: "www.makersacademy.com")
+        var passedUrl = dataPassed
+        print(passedUrl)
+      
+       // loadWebPage(urlString: passedUrl!)
+        
+    }
+    func loadWebPage(urlString: String){
+        let url = NSURL(string: urlString )
         let request = NSURLRequest(url: url as! URL)
-        
         webView.loadRequest(request as URLRequest)
-        
     }
 
     override func didReceiveMemoryWarning() {

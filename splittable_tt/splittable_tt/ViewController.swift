@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+var rowNow = Int()
 
 class TableViewController: UITableViewController{
  
@@ -38,9 +39,22 @@ class TableViewController: UITableViewController{
     
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             if indexPath.row > 0 {
+            rowNow = indexPath.row
+
              performSegue(withIdentifier: "showServiceDetails", sender: indexPath.row)
             }
         }
+    
+   
+  
+//        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        if (segue.identifier == "showServiceDetails") {
+//            print("called")
+//            var svc = segue.destination as! WebViewController;
+//            var url =
+//            svc.dataPassed = url
+//        }
+//    }
     
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
