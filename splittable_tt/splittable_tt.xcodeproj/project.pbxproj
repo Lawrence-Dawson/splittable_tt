@@ -151,19 +151,13 @@
 		89B2C40F1DD3CDE600615319 /* splittable_tt */ = {
 			isa = PBXGroup;
 			children = (
+				89F338DA1DD605AE000FB44F /* Objects */,
+				89F338D91DD60581000FB44F /* DataSource */,
+				89F338D71DD60443000FB44F /* Storyboard */,
+				89F338D61DD6040B000FB44F /* ViewControllers */,
 				89B2C4101DD3CDE600615319 /* AppDelegate.swift */,
-				89B2C4121DD3CDE600615319 /* ViewController.swift */,
-				89F338CE1DD50169000FB44F /* TableViewCellBanner.swift */,
-				89F338CF1DD50169000FB44F /* TableViewCellBanner.xib */,
-				89F338CA1DD4CC3B000FB44F /* TableViewCell.swift */,
-				89F338CB1DD4CC3B000FB44F /* TableViewCell.xib */,
-				89B2C4141DD3CDE600615319 /* Main.storyboard */,
 				89B2C4171DD3CDE600615319 /* Assets.xcassets */,
-				89B2C4191DD3CDE600615319 /* LaunchScreen.storyboard */,
 				89B2C41C1DD3CDE600615319 /* Info.plist */,
-				897591031DD3DA2800C942C3 /* RestApiManager.swift */,
-				89F338C61DD48066000FB44F /* ProfessionObject.swift */,
-				89F338D41DD53929000FB44F /* WebViewController.swift */,
 			);
 			path = splittable_tt;
 			sourceTree = "<group>";
@@ -184,6 +178,44 @@
 				89B2C4321DD3CDE600615319 /* Info.plist */,
 			);
 			path = splittable_ttUITests;
+			sourceTree = "<group>";
+		};
+		89F338D61DD6040B000FB44F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				89F338CA1DD4CC3B000FB44F /* TableViewCell.swift */,
+				89F338CE1DD50169000FB44F /* TableViewCellBanner.swift */,
+				89F338D41DD53929000FB44F /* WebViewController.swift */,
+				89B2C4121DD3CDE600615319 /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		89F338D71DD60443000FB44F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				89B2C4191DD3CDE600615319 /* LaunchScreen.storyboard */,
+				89F338CB1DD4CC3B000FB44F /* TableViewCell.xib */,
+				89F338CF1DD50169000FB44F /* TableViewCellBanner.xib */,
+				89B2C4141DD3CDE600615319 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		89F338D91DD60581000FB44F /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				897591031DD3DA2800C942C3 /* RestApiManager.swift */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		89F338DA1DD605AE000FB44F /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				89F338C61DD48066000FB44F /* ProfessionObject.swift */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
