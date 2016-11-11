@@ -18,7 +18,6 @@
 		89B2C4261DD3CDE600615319 /* splittable_ttTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B2C4251DD3CDE600615319 /* splittable_ttTests.swift */; };
 		89B2C4311DD3CDE600615319 /* splittable_ttUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B2C4301DD3CDE600615319 /* splittable_ttUITests.swift */; };
 		89F338C71DD48066000FB44F /* ProfessionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F338C61DD48066000FB44F /* ProfessionObject.swift */; };
-		89F338C91DD4CB9D000FB44F /* code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F338C81DD4CB9D000FB44F /* code.swift */; };
 		89F338CC1DD4CC3B000FB44F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F338CA1DD4CC3B000FB44F /* TableViewCell.swift */; };
 		89F338CD1DD4CC3B000FB44F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89F338CB1DD4CC3B000FB44F /* TableViewCell.xib */; };
 		89F338D01DD50169000FB44F /* TableViewCellBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F338CE1DD50169000FB44F /* TableViewCellBanner.swift */; };
@@ -63,7 +62,6 @@
 		89B2C4301DD3CDE600615319 /* splittable_ttUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splittable_ttUITests.swift; sourceTree = "<group>"; };
 		89B2C4321DD3CDE600615319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89F338C61DD48066000FB44F /* ProfessionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessionObject.swift; sourceTree = "<group>"; };
-		89F338C81DD4CB9D000FB44F /* code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = code.swift; sourceTree = "<group>"; };
 		89F338CA1DD4CC3B000FB44F /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		89F338CB1DD4CC3B000FB44F /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		89F338CE1DD50169000FB44F /* TableViewCellBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellBanner.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				89B2C41C1DD3CDE600615319 /* Info.plist */,
 				897591031DD3DA2800C942C3 /* RestApiManager.swift */,
 				89F338C61DD48066000FB44F /* ProfessionObject.swift */,
-				89F338C81DD4CB9D000FB44F /* code.swift */,
 				89F338D41DD53929000FB44F /* WebViewController.swift */,
 			);
 			path = splittable_tt;
@@ -472,7 +469,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89F338C91DD4CB9D000FB44F /* code.swift in Sources */,
 				89B2C4131DD3CDE600615319 /* ViewController.swift in Sources */,
 				89B2C4111DD3CDE600615319 /* AppDelegate.swift in Sources */,
 				89F338D01DD50169000FB44F /* TableViewCellBanner.swift in Sources */,

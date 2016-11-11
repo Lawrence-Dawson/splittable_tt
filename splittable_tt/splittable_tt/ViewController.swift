@@ -19,45 +19,24 @@ class TableViewController: UITableViewController{
             addData()
         }
     
-    func addData() {
-            RestApiManager.sharedInstance.getSheetsuApi { (json: JSON) in
-                if let results = json.array {
-                    for entry in results {
-                        self.items.append(ProfessionObject(json: entry))
+        func addData() {
+                RestApiManager.sharedInstance.getSheetsuApi { (json: JSON) in
+                    if let results = json.array {
+                        for entry in results {
+                            self.items.append(ProfessionObject(json: entry))
+                        }
+                        self.items.sort{$0.sortOrder < $1.sortOrder}
+                        DispatchQueue.main.async(execute: {
+                            self.tableView.reloadData()
+                        })
                     }
-                    self.items.sort{$0.sortOrder < $1.sortOrder}
-                    DispatchQueue.main.async(execute: {
-                        self.tableView.reloadData()
-                    })
                 }
             }
-        }
     
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return self.items.count;
         }
     
-        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            if indexPath.row > 0 {
-                rowNow = indexPath.row
-                
-                let currentViewController = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-                currentViewController.dataPassed = items[rowNow].url
-                navigationController?.pushViewController(currentViewController, animated: true)
-                
-               // performSegue(withIdentifier: "showServiceDetails", sender: indexPath.row)
-            }
-        }
-    
-   
-  
-//       override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if (segue.identifier == "showServiceDetails") {
-//            print("called")
-//            var svc = segue.destination as! WebViewController;
-//            var url = svc.dataPassed
-//        }
-//    }
     
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -84,9 +63,8 @@ class TableViewController: UITableViewController{
                 
                 return cell
             }
-            
-            
         }
+    
     
         override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             if  self.items[indexPath.row].name == "Banner" {
@@ -95,6 +73,16 @@ class TableViewController: UITableViewController{
                 return 250
             }
         }
+    
+    
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            if indexPath.row > 0 {
+                let currentViewController = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+                currentViewController.professionUrl = items[indexPath.row].url
+                navigationController?.pushViewController(currentViewController, animated: true)
+            }
+        }
+    
     
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()

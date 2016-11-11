@@ -1,3 +1,36 @@
+
+Splittable Tech Test
+====================
+
+Install Instructions
+--------------------
+
+To run this app please do the following:
+ - Clone this repository to a local directory
+ - Change into your newly cloned directory via the Command Line
+ - Within the Command Line enter the following commands:
+  - 'pod install'
+  - 'open splittable_tt/splittable_tt.xcworkspace/'
+
+- Within Xcode press the 'build and run' button
+
+What I achieved?
+----------------
+
+Successes:
+- I Successfully achieved all the basic task requirements.
+
+Still to do:
+- Stretch goal of data persistence.
+- There are currently no tests.
+
+Struggles:
+- Segue to a new view using custom cells.
+
+If I could do it again:
+- Use TDD.
+- Achieve data persistence.
+
 Goal
 ----
 To produce a simple iOS application demonstrating an understanding of the Swift language, network communication, JSON parsing and use of core UIKit frameworks. This coding test is based off an actual feature in the Splittable iOS application.
